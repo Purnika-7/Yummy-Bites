@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Yummy Restaurant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <h1>🍽️ Yummy Bites</h1>
+                <p>Welcome back!</p>
+            </div>
+
+            <!-- Login Form -->
+            <div class="form-container" id="login-form-container">
+                <h2>Login</h2>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-username">Username</label>
+                        <input type="text" id="login-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Login 🚀</button>
+                </form>
+                <p class="toggle-form">
+                    Don't have an account? 
+                    <a href="#" id="show-register">Register here</a>
+                </p>
+            </div>
+
+            <!-- Register Form -->
+            <div class="form-container" id="register-form-container" style="display: none;">
+                <h2>Register</h2>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-username">Username</label>
+                        <input type="text" id="register-username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input type="email" id="register-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" name="password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Register 🎉</button>
+                </form>
+                <p class="toggle-form">
+                    Already have an account? 
+                    <a href="#" id="show-login">Login here</a>
+                </p>
+            </div>
+
+            <div class="back-home">
+                <a href="/">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='auth.js') }}"></script>
+</body>
+</html>

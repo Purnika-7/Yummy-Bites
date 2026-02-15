@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Yummy Restaurant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-icon">🍽️</span>
+                <span class="logo-text">Yummy Bites</span>
+            </div>
+            <div class="nav-links">
+                <a href="/" class="nav-link">Home</a>
+                <a href="/#menu" class="nav-link">Menu</a>
+                <button class="nav-link logout-btn" id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="user-info">
+                <div class="user-avatar">👤</div>
+                <h3 id="username-display">User</h3>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="sidebar-link active" data-section="orders">📦 My Orders</a>
+                <a href="#" class="sidebar-link" data-section="profile">👤 Profile</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Orders Section -->
+            <section class="dashboard-section active" id="orders-section">
+                <h2>My Orders 📦</h2>
+                <div class="orders-container" id="orders-container">
+                    <!-- Orders will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Profile Section -->
+            <section class="dashboard-section" id="profile-section">
+                <h2>My Profile 👤</h2>
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <div class="info-row">
+                            <span class="info-label">Username:</span>
+                            <span class="info-value" id="profile-username">-</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Member Since:</span>
+                            <span class="info-value">2024</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">Total Orders:</span>
+                            <span class="info-value" id="total-orders">0</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>
